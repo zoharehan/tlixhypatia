@@ -1,5 +1,5 @@
 # tlixhypatia
-updates: only the django  project and app have been initialized. Will proceed with adding the admin user.
+updates: added admin user, can pull now.
 
 hypatia summary page web app
 
