@@ -24,7 +24,7 @@ class Question(models.Model):
     # question_prompt: str
     # topic_type: str
 
-    question_id = models.CharField(max_length=200)
+    question_id = models.CharField(max_length=200) # db give each Question object an id 
     question_prompt = models.CharField(max_length=200)
     topic_type = models.CharField(max_length=200)
     # maybe have the date as the question_id? or have a time submitted variable?
@@ -61,4 +61,3 @@ class Question(models.Model):
 
         """
         return self.topic_type
-
