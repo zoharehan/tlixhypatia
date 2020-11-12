@@ -64,3 +64,35 @@ class Question(models.Model):
 
         """
         return self.topic_type
+    
+class SuggestedPractice(models.Model):
+    """shows suggested questions and topics that they are from
+     === Public Attributes ===
+    student:
+        a student object used to obtain completed questions and missed topics
+        for suggested practice questions
+    === Representation Invariants===
+    - topic_most_missed is always a key in the question_bank
+    """
+
+    def __init__(self,student) -> None:
+        """initialising by passing in a student object"""
+        self.student=student
+
+    def get_topic_most_missed(self):
+        """return the topic the student is weakest in by calling on
+        a method from the StudentPerformance Class"""
+        return StudentPerformance(self.student).get_topic_most_missed()
+
+    def get_question(self):
+        """return a question object from the question bank by calling on
+        StudentManager for the student to practice"""
+        li = StudentManager(self.student).get_all_questions()
+        for i in li[self.get_topic_most_missed()]:
+            if li[self.get_topic_most_missed()] == self.student.get_completed_questions()\
+                    or li[self.get_topic_most_missed()] == []:
+                return "congratulations, you have finished all your practice!"
+            if i not in self.student.get_completed_questions():
+                return i
+    
+   
