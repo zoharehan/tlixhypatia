@@ -5,6 +5,8 @@ export class Log extends Component {
     render() {
         return (
             <div>
+                <h1>Log of all questions done:</h1>
+                <br></br>
                 <table class="table">
                     <thead>
                         <tr>
