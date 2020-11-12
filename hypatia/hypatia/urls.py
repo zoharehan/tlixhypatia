@@ -20,6 +20,7 @@ from rest_framework import routers, serializers, viewsets # Django REST setup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('frontend.urls')),
     path('', include('studentsummary.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-auth/', include('rest_framework.urls')) # browsable API - REST framework's login and logout views
