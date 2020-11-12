@@ -19,7 +19,7 @@ export class Log extends Component {
         return (
             <Fragment>
                <h2>Log of questions</h2>
-               <table className="table table-striped">
+               <table className="table table-striped table-bordered">
                  <thead >
                      <tr>
                          <th>Question Prompt</th>
