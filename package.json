@@ -4,7 +4,8 @@
   "description": "Currently: attempting to use React in its own \"frontend\" Django app: load a single HTML template and let React manage the frontend.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development ./hypatia/frontend/src/index.js --output ./hypatia/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./hypatia/frontend/src/index.js --output ./hypatia/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
