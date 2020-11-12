@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'studentsummary.apps.StudentsummaryConfig',  # include the app in our project
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
