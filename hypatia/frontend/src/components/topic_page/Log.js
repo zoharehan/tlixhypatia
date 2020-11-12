@@ -1,45 +1,49 @@
 // this displays the log of all questions
-import React, { Component } from 'react'
+// to work with redux from this componet
+
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getQuestion } from '../../actions/questions';
 
 export class Log extends Component {
+    static propTypes = {
+        questions: PropTypes.array.isRequired,
+    };
+
+    componentDidMount() {
+        this.props.getQuestion();
+    }
+
     render() {
         return (
-            <div>
-                <h1>Log of all questions done:</h1>
-                <br></br>
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Prompt</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Handle</th>
+            <Fragment>
+               <h2>Log of questions</h2>
+               <table className="table table-striped">
+                 <thead >
+                     <tr>
+                         <th>Question Prompt</th>
+                         <th>Question Type</th>
+                         <th>Date Created</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                    { this.props.questions.map(question => (
+                        <tr key={question.id}>
+                            <td>{question.question_prompt}</td>
+                            <td>{question.topic_type}</td>
+                            <td>{question.created_at}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    ))}
+                 </tbody>
+               </table>
+            </Fragment>
         )
     }
 }
 
-export default Log
+const mapStateToProps = (state) => ({
+    questions: state.questions.questions,
+});
+
+export default connect(mapStateToProps, { getQuestion })(Log);
