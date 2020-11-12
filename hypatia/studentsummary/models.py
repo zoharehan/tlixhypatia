@@ -24,9 +24,12 @@ class Question(models.Model):
     # question_prompt: str
     # topic_type: str
 
-    question_id = models.CharField(max_length=200) # db give each Question object an id 
+    # db give each Question object an id , so I will add a time field instead
+
     question_prompt = models.CharField(max_length=200)
     topic_type = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True) #time will be added automatically
+
     # maybe have the date as the question_id? or have a time submitted variable?
 
     # def __init__(self, question_id, question_prompt, topic_type) -> None:

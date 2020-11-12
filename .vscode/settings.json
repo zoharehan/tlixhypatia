@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/Users/sophysun/.local/share/virtualenvs/tlixhypatia-VBc3IRvT/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+    "--disable=C0111", // missing docstring
+    "--load-plugins=pylint_django,pylint_celery",
+ ],
+}
