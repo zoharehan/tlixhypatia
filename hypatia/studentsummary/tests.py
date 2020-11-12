@@ -18,7 +18,7 @@ class QuestionTests(TestCase):
         Testing the str method in the Question class.
         """
         question = create_question(question_id=1, question_prompt="divide the pie", topic_type="division")
-        self.assertEqual(print(question), "divide the pie")
+        self.assertEqual(question.__str__(), "divide the pie")
 
     def test_is_topic_method_1(self):
         """
