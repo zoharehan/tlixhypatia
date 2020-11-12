@@ -1,5 +1,6 @@
 # tlixhypatia
-updates: added admin user, can pull now.
+How to see start react: npm run dev 
+python3 manage.py runserver
 
 username: admin
 password: password
