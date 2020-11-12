@@ -1,5 +1,5 @@
 # tlixhypatia
-How to see start react: npm run dev 
+How to start react: npm run dev 
 python3 manage.py runserver
 
 username: admin
