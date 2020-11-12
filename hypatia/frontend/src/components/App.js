@@ -12,8 +12,7 @@ class App extends Component {
                 <div className="container">
                   <Dashboard />
                 </div> 
-            </Fragment>
-           
+            </Fragment>   
         )
     }
 }
