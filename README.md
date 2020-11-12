@@ -1,5 +1,7 @@
 # tlixhypatia
-updates: added admin user, can pull now.
+Currently: attempting to use React in its own "frontend" Django app: load a single HTML template and let React manage the frontend.
+
+Hopefully nothing breaks in the process.
 
 username: admin
 password: password
