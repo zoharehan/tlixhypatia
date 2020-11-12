@@ -11,6 +11,8 @@ Creating a web application interface for high school teachers to grade math assi
 
 Stack: Django, Django REST, React, Redux
 
+Used: bootswatch(customized bootstrap), bootstrap
+
 npm run dev => compile react application for development so we can view in the browser
 
 npm run build => to deploy
