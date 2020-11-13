@@ -1,8 +1,28 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Question, StudentManager
+from .models import Question, Topic
 # Create your tests here.
 
+class TopicModelTests(TestCase):
+    def test_get_topic_name(self):
+        topic = Topic(name = "Algebra",status = False)
+        self.assertIs(topic.get_name(),"Algebra")
+
+    def test_set_name(self):
+        topic = Topic(name = "Algebra",status = False)
+        topic.set_name("Equation")
+        self.assertIs(topic.name, "Equation")
+
+    def test_get_status(self):
+        topic = Topic(name = "Algebra",status = False)
+        self.assertIs(topic.get_status(),False)
+        topic = Topic(name = "Algebra",status = True)
+        self.assertIs(topic.get_status(),True)
+
+    def test_unlock(self):
+        topic = Topic(name = "Algebra",status = False)
+        topic.unlock()
+        self.assertIs(topic.status,True)
 
 def create_question(question_id, question_prompt, topic_type):
     """
@@ -40,3 +60,4 @@ class QuestionTests(TestCase):
         """
         question = create_question(question_id=1, question_prompt="divide the pie", topic_type="division")
         self.assertEqual(question.get_topic(), "division")
+
