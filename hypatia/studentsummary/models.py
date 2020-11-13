@@ -64,3 +64,4 @@ class Question(models.Model):
 
         """
         return self.topic_type
+
