@@ -5,3 +5,4 @@ router = routers.DefaultRouter()
 router.register('questionapi/question', QuestionViewSet, 'question') # (endpoint/question, viewset)
 
 urlpatterns = router.urls
+                                    

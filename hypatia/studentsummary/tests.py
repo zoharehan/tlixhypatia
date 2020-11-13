@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Question
+from .models import Question, StudentManager
 # Create your tests here.
 
 
