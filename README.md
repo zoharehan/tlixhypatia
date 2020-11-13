@@ -32,5 +32,9 @@ pip install markdown       # Markdown support for the browsable API.
 pip install django-filter  # Filtering support
 
 everytime you make a new model, run these commands in your terminal when you are in the hypatia folder:
+
+
 python3 manage.py makemigrations
+
+
  python3 manage.py migrate
