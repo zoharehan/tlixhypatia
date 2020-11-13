@@ -1,7 +1,7 @@
-from django.urls import path
+from rest_framework import routers
+from .questionapi import QuestionViewSet
 
-from . import views
+router = routers.DefaultRouter()
+router.register('questionapi/question', QuestionViewSet, 'question') # (endpoint/question, viewset)
 
-urlpatterns = [
-    path('', views.index, name='index'),
-]
+urlpatterns = router.urls
