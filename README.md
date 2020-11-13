@@ -11,7 +11,9 @@ email: admin@example.com
 
 hypatia summary page web app
 
-Creating a web application interface for high school teachers to grade math assignments.
+
+Creating a web application interface for elementary students to learn math. 
+
 
 Stack: Django, Django REST, React, Redux
 
@@ -22,3 +24,10 @@ npm run dev => compile react application for development so we can view in the b
 npm run build => to deploy
 
 questionapi: http://127.0.0.1:8000/questionapi/question/
+
+
+libraries to install:
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+
