@@ -27,9 +27,9 @@ questionapi: http://127.0.0.1:8000/questionapi/question/
 
 
 libraries to install:
-pip install djangorestframework
-pip install markdown       # Markdown support for the browsable API.
-pip install django-filter  # Filtering support
+  pip install djangorestframework
+  pip install markdown       # Markdown support for the browsable API.
+  pip install django-filter  # Filtering support
 
 everytime you make a new model, run these commands in your terminal when you are in the hypatia folder:
 
