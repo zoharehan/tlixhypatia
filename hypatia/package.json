@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./hypatia/frontend/src/index.js --output ./hypatia/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./hypatia/frontend/src/index.js --output ./hypatia/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",
