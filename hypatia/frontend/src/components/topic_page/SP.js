@@ -4,35 +4,31 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getQuestion } from "../../actions/questions";
+import { getSuggestedPractice } from "../../actions/suggestedpractices";
 
-export class Log extends Component {
+export class SP extends Component {
   static propTypes = {
-    questions: PropTypes.array.isRequired,
+    suggestedpractices: PropTypes.array.isRequired,
   };
 
   componentDidMount() {
-    this.props.getQuestion();
+    this.props.getSuggestedPractice();
   }
 
   render() {
     return (
       <Fragment>
-        <h2>Log of questions</h2>
+        <h2>Suggested Questions</h2>
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Question Prompt</th>
-              <th>Question Type</th>
-              <th>Date Created</th>
             </tr>
           </thead>
           <tbody>
-            {this.props.questions.map((question) => (
-              <tr key={question.id}>
-                <td>{question.question_prompt}</td>
-                <td>{question.topic_type}</td>
-                <td>{question.created_at}</td>
+            {this.props.suggestedpractices.map((suggestedpractice) => (
+              <tr key={suggestedpractice.id}>
+                <td>{suggestedpractice.question_suggested}</td>
               </tr>
             ))}
           </tbody>
@@ -43,7 +39,7 @@ export class Log extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  questions: state.questions.questions,
+  suggestedpractices: state.suggestedpractices.suggestedpractices,
 });
 
-export default connect(mapStateToProps, { getQuestion })(Log);
+export default connect(mapStateToProps, { getSuggestedPractice })(SP);

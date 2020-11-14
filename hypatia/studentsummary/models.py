@@ -74,15 +74,15 @@ class SuggestedPractice(models.Model):
     === Representation Invariants===
     - topic_most_missed is always a key in the question_bank
     """
-
-    def __init__(self,student) -> None:
-        """initialising by passing in a student object"""
-        self.student=student
+    question_suggested = models.CharField(max_length=200)
+    topic_most_missed = models.CharField(max_length=200)
+    suggested_at = models.DateTimeField(auto_now_add=True)
 
     def get_topic_most_missed(self):
         """return the topic the student is weakest in by calling on
         a method from the StudentPerformance Class"""
-        return StudentPerformance(self.student).get_topic_most_missed()
+        self.topic_most_missed = StudentPerformance(self.student).get_topic_most_missed()
+        return self.topic_most_missed
 
     def get_question(self):
         """return a question object from the question bank by calling on
@@ -93,6 +93,7 @@ class SuggestedPractice(models.Model):
                     or li[self.get_topic_most_missed()] == []:
                 return "congratulations, you have finished all your practice!"
             if i not in self.student.get_completed_questions():
+                self.question_suggested = i
                 return i
     
    
