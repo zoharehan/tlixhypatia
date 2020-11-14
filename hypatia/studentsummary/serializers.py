@@ -11,6 +11,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
+        fields = '__all__'
 
 # Topic Serializer
 class TopicSerializer(serializers.ModelSerializer):
