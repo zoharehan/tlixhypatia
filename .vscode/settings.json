@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/sophysun/.local/share/virtualenvs/tlixhypatia-VBc3IRvT/bin/python",
+    "python.pythonPath": "C:\\Users\\Ali Syed\\.virtualenvs\\tlixhypatia-FmGU5Rv9\\Scripts\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
     "--disable=C0111", // missing docstring
