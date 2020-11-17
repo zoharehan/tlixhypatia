@@ -1,5 +1,7 @@
 # tlixhypatia
 
+Todo: Write down all the steps to set up the environment and a set of commands to run the server so the TAs and us are on the same page. 
+
 Currently: attempting to use React in its own "frontend" Django app: load a single HTML template and let React manage the frontend.
 
 How to start react: npm run dev
