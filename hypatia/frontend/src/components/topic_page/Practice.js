@@ -12,13 +12,31 @@ export class Practice extends Component {
   };
 
   componentDidMount() {
-    this.props.getSuggestedPractices;
+    this.props.getSuggestedPractices();
   }
 
   render() {
     return (
       <Fragment>
-        <h2>Log of sugprac</h2>
+        <h2>Suggested Practice Questions</h2>
+        <table className="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Questions Suggested</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.props.suggestedpractices.map((suggestedpracticee) => (
+              <tr key={suggestedpracticee.id}>
+                <td>{suggestedpracticee.question_suggested}</td>
+                <td>
+                  <button className="btn btn-success btn-sm">Completed</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Fragment>
     );
   }

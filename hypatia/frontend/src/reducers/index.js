@@ -5,5 +5,5 @@ import suggestedpractices from "./suggestedpractices";
 
 export default combineReducers({
   questions,
-  suggestedpractices,
+  suggestedpractices: suggestedpractices,
 });
