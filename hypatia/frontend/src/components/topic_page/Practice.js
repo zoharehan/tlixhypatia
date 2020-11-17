@@ -4,8 +4,17 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { getSuggestedPractices } from "../../actions/suggestedpractices";
 
 export class Practice extends Component {
+  static PropTypes = {
+    suggestedpractices: PropTypes.array.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.getSuggestedPractices;
+  }
+
   render() {
     return (
       <Fragment>
@@ -14,5 +23,8 @@ export class Practice extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  suggestedpractices: state.suggestedpractices.suggestedpractices,
+});
 
-export default Practice;
+export default connect(mapStateToProps, { getSuggestedPractices })(Practice);

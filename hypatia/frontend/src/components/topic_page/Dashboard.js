@@ -7,6 +7,7 @@ export default function Dashboard() {
   return (
     <Fragment>
       <Log />
+      <Practice />
     </Fragment>
   );
 }
