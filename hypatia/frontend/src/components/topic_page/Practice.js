@@ -4,7 +4,10 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getSuggestedPractices } from "../../actions/suggestedpractices";
+import {
+  getSuggestedPractices,
+  deleteSuggestedPractices,
+} from "../../actions/suggestedpractices";
 
 export class Practice extends Component {
   static PropTypes = {
@@ -31,7 +34,16 @@ export class Practice extends Component {
               <tr key={suggestedpracticee.id}>
                 <td>{suggestedpracticee.question_suggested}</td>
                 <td>
-                  <button className="btn btn-success btn-sm">Completed</button>
+                  <button
+                    onClick={this.props.deleteSuggestedPractices.bind(
+                      this,
+                      suggestedpracticee.id
+                    )}
+                    className="btn btn-success btn-sm"
+                  >
+                    {" "}
+                    Completed
+                  </button>
                 </td>
               </tr>
             ))}
@@ -45,4 +57,7 @@ const mapStateToProps = (state) => ({
   suggestedpractices: state.suggestedpractices.suggestedpractices,
 });
 
-export default connect(mapStateToProps, { getSuggestedPractices })(Practice);
+export default connect(mapStateToProps, {
+  getSuggestedPractices,
+  deleteSuggestedPractices,
+})(Practice);
