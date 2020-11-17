@@ -27,6 +27,8 @@ npm run build => to deploy
 
 questionapi: http://127.0.0.1:8000/questionapi/question/
 
+suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
+
 
 libraries to install:
 <br />
