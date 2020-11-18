@@ -14,6 +14,7 @@ export default function (state = initialState, action) {
         ...state,
         suggestedpractices: action.payload,
       };
+    //looping through all the questions and returning only the ones which do not have the id of the one we delete
     case DELETE_SUGGESTEDPRACTICES:
       return {
         ...state,

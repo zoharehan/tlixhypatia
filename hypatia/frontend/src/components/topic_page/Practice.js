@@ -42,7 +42,7 @@ export class Practice extends Component {
                     className="btn btn-success btn-sm"
                   >
                     {" "}
-                    Completed
+                    Mark as Complete
                   </button>
                 </td>
               </tr>
