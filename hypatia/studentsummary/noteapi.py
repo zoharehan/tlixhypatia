@@ -5,6 +5,7 @@ from .serializers import NoteSerializer
 # Note Viewset
 # this lets us create a full CRUD API w/o having to specifiy specific methods for the functionality
 
+
 class NoteViewSet(viewsets.ModelViewSet):
     # a query that grabs all the notes
     queryset = Note.objects.all()
