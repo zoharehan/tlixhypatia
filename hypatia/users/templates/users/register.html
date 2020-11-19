@@ -1,10 +1,11 @@
 {% block content %}
+<body style="background-color:powderblue">
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Join Today</legend>
-            {{ form }}
+            {{ form.as_p }}
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Sign Up</button>
@@ -16,4 +17,6 @@
         </small>
     </div>
 </div>
+<img src="tutor-helping-student-in-study-clipart-1.jpg">
+</body>
 {% endblock content %}
