@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a98d9164f16ad3149408dedfd6cba8e8f7380d059e67bb888092a398e3b8a475"
+            "sha256": "93b5a38f38de162eb89b648211a1dc8c7ed63e46031b170c118d78f59ed3965b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -158,6 +158,13 @@
             "markers": "python_version >= '3.5'",
             "version": "==2.4.2"
         },
+        "autopep8": {
+            "hashes": [
+                "sha256:d21d3901cb0da6ebd1e83fc9b0dfbde8b46afc2ede4fe32fbda0c7c6118ca094"
+            ],
+            "index": "pypi",
+            "version": "==1.5.4"
+        },
         "isort": {
             "hashes": [
                 "sha256:dcab1d98b469a12a1a624ead220584391648790275560e1a43e54c5dceae65e7",
@@ -199,6 +206,14 @@
                 "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
             ],
             "version": "==0.6.1"
+        },
+        "pycodestyle": {
+            "hashes": [
+                "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367",
+                "sha256:c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.6.0"
         },
         "pylint": {
             "hashes": [

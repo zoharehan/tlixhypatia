@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',   # added Django REST framework
     'frontend',
     'users.apps.UsersConfig', # added this app to our project
+    'crispy_forms', #for styling the login page
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
