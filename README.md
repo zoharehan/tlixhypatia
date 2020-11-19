@@ -52,3 +52,5 @@ questionapi: http://127.0.0.1:8000/questionapi/question/
 
 suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
 
+topicapi: http://127.0.0.1:8000/topicapi/topic
+
