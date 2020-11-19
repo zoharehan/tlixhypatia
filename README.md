@@ -1,8 +1,19 @@
 # tlixhypatia
+Pre-Run Installations:
+1. For the Hypatia Python Server:
+  - pip install eventlet
+  - pip install python-socketio
+  - download the json package for your IDE
+2. The Companion Application:
+  - pip install pipenv => the virtual environment
+  (if using pipenv, the commands starting with pip in the next lines will be replaced with pipenv)
+  - pip install django, djangorestframework, django-rest-knox
+  - install node.js here: https://nodejs.org/en/
+  - npm init -y => to create your package.json file 
+  - npm i -D webpack webpack-cli => installing webpack,webpack cli as a dev dependency
+  - npm i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties => babel transpiles react to js
+  - npm i react react-dom prop-types => react for frontend
 
-Todo: Write down all the steps to set up the environment and a set of commands to run the server so the TAs and us are on the same page. 
-
-Currently: attempting to use React in its own "frontend" Django app: load a single HTML template and let React manage the frontend.
 
 How to start react: npm run dev
 python3 manage.py runserver
