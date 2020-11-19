@@ -19,15 +19,18 @@ export class NoteList extends Component {
                 <h2>Notes</h2>
                 <table className = "table table-stripped">
                     <thead>
-                        <th>ID</th>
-                        <th>Message</th>
+                        <tr>
+                            <th>ID</th>
+                            <th>Message</th>
+                            <th />
+                        </tr> 
                     </thead>
                     <tbody>
                         {this.props.notes.map(note => (
                             <tr key={note.id}>
                                 <td>{note.id}</td>
-                                <td>{note.message}</td>
-                                <td><button classname="btn btn-danger btn-sm">Delete</button></td>
+                                <td>{note._notes}</td>
+                                <td><button className="btn btn-danger btn-sm">Delete</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -41,4 +44,4 @@ const mapStateToProps = state => ({
     notes: state.notes.notes
 });
 
-export default connect(mapStateToProps, {getNotes})(NoteList);
+export default connect(mapStateToProps, { getNotes } )(NoteList);
