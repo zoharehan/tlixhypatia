@@ -2,12 +2,16 @@
 import React, { Fragment } from "react";
 import Log from "./Log";
 import Practice from "./Practice";
+import NoteForm from './NoteForm';
+import NoteList from './NoteList';
 
 export default function Dashboard() {
   return (
     <Fragment>
       <Log />
       <Practice />
+      <NoteList/>
+      <NoteForm />
     </Fragment>
   );
 }
