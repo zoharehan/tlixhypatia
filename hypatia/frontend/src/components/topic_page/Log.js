@@ -17,7 +17,9 @@ export class Log extends Component {
 
     render() {
         return (
+            
             <Fragment>
+            
                <h2>Log of questions</h2>
                <table className="table table-striped table-bordered">
                  <thead >
