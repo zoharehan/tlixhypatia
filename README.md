@@ -1,4 +1,5 @@
 # tlixhypatia
+important announcement: topic_summary works: http://127.0.0.1:8000/summary/
 Pre-Run Installations:
 1. For the Hypatia Python Server:
   - pip install eventlet
