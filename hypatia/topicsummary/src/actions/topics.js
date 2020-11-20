@@ -9,7 +9,7 @@ import { GET_TOPICS } from "./types";
 
 export const getTopic = () => (dispatch) => {
   axios
-    .get("/hypatia/studentsummary/topicapi/topics/")
+    .get("/topicapi/topic/")
     .then((res) => {
       dispatch({
         type: GET_TOPICS,
