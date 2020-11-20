@@ -4,8 +4,8 @@
   "description": "Currently: attempting to use React in its own \"frontend\" Django app: load a single HTML template and let React manage the frontend.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js & webpack --mode development --watch ./hypatia/topicsummary/src/index.js --output-path ./hypatia/topicsummary/static/topicsummary/main.js",
+    "build": "webpack --mode production ./hypatia/frontend/src/index.js --output-path ./hypatia/frontend/static/frontend/main.js & webpack --mode production ./hypatia/topicsummary/src/index.js --output-path ./hypatia/topicsummary/static/topicsummary/main.js"
   },
   "repository": {
     "type": "git",
