@@ -18,13 +18,13 @@ export class Log extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Log of questions</h2>
+        <h2>Questions Completed</h2>
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Question Prompt</th>
               <th>Question Type</th>
-              <th>Date Created</th>
+              <th>Completion Date</th>
             </tr>
           </thead>
           <tbody>

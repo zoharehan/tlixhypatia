@@ -5,7 +5,16 @@ export class Progress extends Component {
   render() {
     return (
       <div style={{ marginBottom: 30, marginTop: 30 }}>
-        <ProgressBar striped variant="info" now={50} style={{ height: 25 }} />
+        <ProgressBar
+          striped
+          variant="info"
+          now={50}
+          style={{
+            height: 25,
+            boxShadow: "2px 2px lightgrey",
+            borderRadius: 25,
+          }}
+        />
       </div>
     );
   }
