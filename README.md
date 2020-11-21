@@ -18,6 +18,7 @@ Pre-Run Installations:
   - npm i react react-dom prop-types => react for frontend
   - npm i redux react-redux redux-thunk redux-devtools-extension
   - npm i axios
+  - npm install react-bootstrap bootstrap
   
 everytime you make a new model, or if you're running this for the first time, run these commands in your terminal when you are in the hypatia folder:
 
