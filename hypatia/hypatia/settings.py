@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'studentsummary.apps.StudentsummaryConfig',  # include the app in our project
+    'users.apps.UsersConfig', # added this app to our project
+    'crispy_forms', #for styling the login page
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',   # added Django REST framework
-    'frontend'
+    'frontend',
+    'topicsummary'
 ]
 
 MIDDLEWARE = [
@@ -108,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/New_York' #changed this to Toronto Time
+TIME_ZONE = 'America/New_York'  # changed this to Toronto Time
 
 USE_I18N = True
 
