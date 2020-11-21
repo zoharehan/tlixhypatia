@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',   # added Django REST framework
     'frontend',
-    'crispy_forms',  # for styling the login page
     'topicsummary'
 ]
 

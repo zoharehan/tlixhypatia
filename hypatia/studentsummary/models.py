@@ -119,6 +119,31 @@ class Topic(models.Model):
         self.status = True
 
 
+class Student(models.Model):
+    """
+    A student user
+    === Attributes ===
+    name: the name of this student
+    topics: this student's list of topics
+    questions: list of questions the student was assigned
+    score: the score on this students questions
+
+    === Representation Invariants ===
+    there cannot be a question in questions that has a topic_type \
+    not in student_topics
+    every key in questions_score must also be in student_topics
+    every key in topic_notes must also be in student_topics
+    """
+
+    name = models.CharField(max_length = 100)
+    questions = []
+    topics = []
+    score = []
+
+    def get_topics(self):
+        return topics
+
+
 class SuggestedPractice(models.Model):
     """shows suggested questions and topics that they are from
      === Public Attributes ===
