@@ -50,9 +50,14 @@ npm run dev => compile react application for development so we can view in the b
 
 npm run build => to deploy
 
-questionapi: http://127.0.0.1:8000/questionapi/question/
 
-suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
+APIs Links:
 
-topicapi: http://127.0.0.1:8000/topicapi/topic
+1. questionapi: http://127.0.0.1:8000/questionapi/question/
+
+2. suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
+
+3. topicapi: http://127.0.0.1:8000/topicapi/topic
+
+4. notesapi: http://127.0.0.1:8000/noteapi/notes
 
