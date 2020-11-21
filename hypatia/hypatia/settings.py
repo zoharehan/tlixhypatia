@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'studentsummary.apps.StudentsummaryConfig',  # include the app in our project
+    'users.apps.UsersConfig', # added this app to our project
+    'crispy_forms', #for styling the login page
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
