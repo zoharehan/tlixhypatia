@@ -3,6 +3,22 @@ import datetime
 from django.utils import timezone
 
 
+class Topic(models.Model):
+    name = models.CharField(max_length=100)
+    status = models.BooleanField()
+
+    def get_name(self) -> str:
+        return self.name
+
+    def set_name(self, new_name: str) -> None:
+        self.name = new_name
+
+    def get_status(self) -> bool:
+        return self.status
+
+    def unlock(self) -> None:
+        self.status = True
+
 class Question(models.Model):
     """
     A Math Question in an assignment/assessment.
@@ -14,6 +30,7 @@ class Question(models.Model):
 
     === Representation Invariants ===
     question_prompt is not the empty string
+    The topic should already in the database. 
 
     """
     # This tells Django what type of data each field holds
@@ -25,18 +42,18 @@ class Question(models.Model):
     # db give each Question object an id , so I will add a time field instead
 
     question_prompt = models.CharField(max_length=200)
-    topic_type = models.CharField(max_length=200)
+    topic_type = models.CharField(max_length = 200)
     # time will be added automatically
     created_at = models.DateTimeField(auto_now_add=True)
+    score = models.FloatField(default=0.0)
 
     # maybe have the date as the question_id? or have a time submitted variable?
 
     def __str__(self) -> str:  # doubles as the getter for question
         """
         Return a string representation of this question including the
-        text of the question.
+        text of the question. 
         """
-        # adding a __str__() method
         return self.question_prompt
 
     def is_topic(self, topic: str) -> bool:
@@ -102,21 +119,7 @@ class Note(models.Model):
             self._notes += message
 
 
-class Topic(models.Model):
-    name = models.CharField(max_length=100)
-    status = models.BooleanField()
 
-    def get_name(self) -> str:
-        return self.name
-
-    def set_name(self, new_name: str) -> None:
-        self.name = new_name
-
-    def get_status(self) -> bool:
-        return self.status
-
-    def unlock(self) -> None:
-        self.status = True
 
 
 class Student(models.Model):
@@ -142,7 +145,7 @@ class Student(models.Model):
 
     def get_topics(self):
         return topics
-
+    # def add_topic
 
 class SuggestedPractice(models.Model):
     """shows suggested questions and topics that they are from

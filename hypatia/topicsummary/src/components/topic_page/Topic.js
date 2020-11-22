@@ -23,7 +23,7 @@ export class Topic extends Component {
             <div class="card-deck-wrapper" style={{padding: "10px"}}>
               <div class="card-deck">
               <div class="card p-2">
-              <a key={topic.id} class="card-block" href="https://sophysun.me" >
+              <a key={topic.id} class="card-block" href="http://127.0.0.1:8000/" >
                 <h5 class="card-title"  style={{padding : '10px', color: 'black', '& h4:hover': {
                 backgroundcolor: 'pink',},}}>{topic.name}</h5>
               </a>
