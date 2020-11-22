@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',   # added Django REST framework
     'frontend',
     'topicsummary'
-
 ]
 
 MIDDLEWARE = [
