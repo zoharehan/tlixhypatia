@@ -26,7 +26,7 @@ export class Topic extends Component {
                 <div
                   class="card p-2"
                   style={{
-                    borderRadius: 25,
+                    borderRadius: "5px",
                     padding: "20px",
                     boxShadow: "2px 2px lightgrey",
                   }}
