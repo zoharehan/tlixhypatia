@@ -23,13 +23,13 @@ export class Progress extends Component {
       headers: { 'Content-Type': 'application/json' }
       // body: JSON.stringify({ title: 'StudentName' })
     };
-      fetch('http://127.0.0.1:8000/progressapi/progress/')
+      fetch('/progressapi/progress/')
       .then(handleRedirect);    
 }
   handleRedirect = (res)=> {
     if( res.status === 200 ){
       // redirect here
-      window.location.href = 'http://127.0.0.1:8000/progressapi/progress/';
+      window.location.href = '/progressapi/progress/';
     }else {
       
     // Something went wrong here
