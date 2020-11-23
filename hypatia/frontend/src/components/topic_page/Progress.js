@@ -6,8 +6,8 @@ export class Progress extends Component {
     return (
       <div style={{ marginBottom: 30, marginTop: 30 }}>
         <ProgressBar
+          animated
           striped
-          variant="info"
           now={50}
           style={{
             height: 25,
