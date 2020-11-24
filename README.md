@@ -18,6 +18,8 @@ Pre-Run Installations:
   - npm i react react-dom prop-types => react for frontend
   - npm i redux react-redux redux-thunk redux-devtools-extension
   - npm i axios
+  - npm install react-bootstrap bootstrap
+  - pip install Django-crispy-forms
   
 everytime you make a new model, or if you're running this for the first time, run these commands in your terminal when you are in the hypatia folder:
 
@@ -49,9 +51,14 @@ npm run dev => compile react application for development so we can view in the b
 
 npm run build => to deploy
 
-questionapi: http://127.0.0.1:8000/questionapi/question/
 
-suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
+APIs Links:
 
-topicapi: http://127.0.0.1:8000/topicapi/topic
+1. questionapi: http://127.0.0.1:8000/questionapi/question/
+
+2. suggested practice questions api: http://127.0.0.1:8000/suggestedpracticeapi/suggestedpractice/
+
+3. topicapi: http://127.0.0.1:8000/topicapi/topic
+
+4. notesapi: http://127.0.0.1:8000/noteapi/notes
 
