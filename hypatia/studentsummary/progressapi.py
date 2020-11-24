@@ -5,10 +5,6 @@ from rest_framework.decorators import action
 from django.http import HttpResponse
 
 
-# ProgressTracker Viewset
-# this lets us create a full CRUD API w/o having to specify specific methods for the functionality
-
-
 class ProgressTrackerViewSet(viewsets.ModelViewSet):
     # a query that grabs all the progresses
     queryset = ProgressTracker.objects.all()
