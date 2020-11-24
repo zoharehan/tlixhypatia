@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Header from './layout/Header';
 import Dashboard from './topic_page/Dashboard';
 
+
 import { Provider } from 'react-redux'; // connect redux to react through this provider
 import store from '../store';
 

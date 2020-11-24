@@ -183,3 +183,4 @@ class SuggestedPractice(models.Model):
 class ProgressTracker(models.Model):
     mark = models.IntegerField()
     topic = models.CharField(max_length=200)
+    

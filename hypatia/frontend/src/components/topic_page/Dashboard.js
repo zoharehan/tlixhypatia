@@ -6,6 +6,7 @@ import Progress from "./Progress";
 import NoteForm from './NoteForm';
 import NoteList from './NoteList';
 
+
 export default function Dashboard() {
   return (
     <Fragment>
@@ -14,6 +15,7 @@ export default function Dashboard() {
       <Practice />
       <NoteList/>
       <NoteForm />
+      
     </Fragment>
   );
 }
