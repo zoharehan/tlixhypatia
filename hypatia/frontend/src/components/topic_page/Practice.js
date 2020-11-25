@@ -1,5 +1,5 @@
 // this displays the log of all questions
-// to work with redux from this componet
+// to work with redux from this component
 
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
