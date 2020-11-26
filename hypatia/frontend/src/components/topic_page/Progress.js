@@ -53,7 +53,12 @@ export class Progress extends Component {
       <div style={{ marginBottom: 30, marginTop: 30 }}>
         <ProgressBar
           now={this.percentageLimits(0, this.state.percentage, 100)}
-          style={{ height: 25 }}
+          style={{
+            height: 25,
+            borderRadius: 25,
+            marginBottom: "5px",
+            boxShadow: "2px 2px #e5e5e5",
+          }}
         />
         <button onClick={this.clickMe}>Next</button>
       </div>
