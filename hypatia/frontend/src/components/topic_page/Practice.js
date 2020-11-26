@@ -20,10 +20,17 @@ export class Practice extends Component {
     this.props.getSuggestedPractices();
   }
 
+  // Count = () =>{
+  //   const length = this.props.suggestedpractices.length;
+  //   return length;
+  // }
+  
   render() {
+    // const length = Count();
     return (
       <Fragment>
         <h2>Suggested Practice Questions</h2>
+        {/* <p>the length is {length} </p> */}
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
@@ -37,7 +44,8 @@ export class Practice extends Component {
                 <td>{suggestedpracticee.question_suggested}</td>
                 <td>
                   <button type="button" 
-                  // class="btn btn-primary" id = "complete" data-toggle="modal" data-target="#example" 
+                  // class="btn btn-primary" id = "complete" 
+                  // data-toggle="modal" data-target="#example"    
                   onClick={this.props.deleteSuggestedPractices.bind(
                        this, suggestedpracticee.id
                      )}
@@ -62,13 +70,6 @@ export class Practice extends Component {
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" onClick={this.props.deleteSuggestedPractices.bind(
-                       this, suggestedpracticee.id
-                     )}
-                     className="btn btn-success btn-sm"
-                          >
-                        {" "} 
-                        Save changes</button>
                         </div>
                       </div>
                     </div>
@@ -83,6 +84,12 @@ export class Practice extends Component {
     );
   }
 }
+
+
+export function add(x,y) {
+  return x+y;
+}
+
 const mapStateToProps = (state) => ({
   suggestedpractices: state.suggestedpractices.suggestedpractices,
 });
