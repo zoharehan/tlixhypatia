@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import { ProgressBar } from "react-bootstrap";
+import Practice from "./Practice";
+import len from "./Practice";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import {
+  getSuggestedPractices,
+  deleteSuggestedPractices,
+} from "../../actions/suggestedpractices";
 
 export class Progress extends Component {
   constructor() {
@@ -8,6 +16,13 @@ export class Progress extends Component {
       percentage: 0,
       // Change this to sth in the database. Django has to have some way to pass to react.
     };
+  }
+  static PropTypes = {
+    suggestedpractices: PropTypes.array.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.getSuggestedPractices();
   }
 
   percentageLimits = (min, value, max) => {
@@ -33,11 +48,10 @@ export class Progress extends Component {
   };
 
   render() {
+    const k = this.props.suggestedpractices.length; //this is where the length is coming from
     return (
       <div style={{ marginBottom: 30, marginTop: 30 }}>
         <ProgressBar
-          striped
-          variant="info"
           now={this.percentageLimits(0, this.state.percentage, 100)}
           style={{ height: 25 }}
         />
@@ -47,4 +61,12 @@ export class Progress extends Component {
   }
 }
 
-export default Progress;
+//this is the connection function to get suggestedpractices into our component, uses redux
+
+const mapStateToProps = (state) => ({
+  suggestedpractices: state.suggestedpractices.suggestedpractices,
+});
+
+export default connect(mapStateToProps, {
+  getSuggestedPractices,
+})(Progress);
