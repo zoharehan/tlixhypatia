@@ -20,17 +20,13 @@ export class Practice extends Component {
     this.props.getSuggestedPractices();
   }
 
-  // Count = () =>{
-  //   const length = this.props.suggestedpractices.length;
-  //   return length;
-  // }
   
   render() {
-    // const length = Count();
+    
     return (
       <Fragment>
         <h2>Suggested Practice Questions</h2>
-        {/* <p>the length is {length} </p> */}
+        
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
