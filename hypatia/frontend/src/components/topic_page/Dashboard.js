@@ -3,8 +3,8 @@ import React, { Fragment } from "react";
 import Log from "./Log";
 import Practice from "./Practice";
 import Progress from "./Progress";
-import NoteForm from './NoteForm';
-import NoteList from './NoteList';
+import NoteForm from "./NoteForm";
+import NoteList from "./NoteList";
 
 
 export default function Dashboard() {
@@ -13,7 +13,7 @@ export default function Dashboard() {
       <Progress />
       <Log />
       <Practice />
-      <NoteList/>
+      <NoteList />
       <NoteForm />
       
     </Fragment>
