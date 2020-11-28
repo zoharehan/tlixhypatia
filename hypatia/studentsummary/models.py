@@ -19,6 +19,7 @@ class Topic(models.Model):
     def unlock(self) -> None:
         self.status = True
 
+
 class Question(models.Model):
     """
     A Math Question in an assignment/assessment.
@@ -42,7 +43,7 @@ class Question(models.Model):
     # db give each Question object an id , so I will add a time field instead
 
     question_prompt = models.CharField(max_length=200)
-    topic_type = models.CharField(max_length = 200)
+    topic_type = models.CharField(max_length=200)
     # time will be added automatically
     created_at = models.DateTimeField(auto_now_add=True)
     score = models.FloatField(default=0.0)
@@ -90,13 +91,6 @@ class Note(models.Model):
     # Replaces the init method
     _notes = models.CharField(max_length=250)
 
-    # def __init__(self, message) -> None:
-    #     """Initialize this note with <message>
-    #     Preconditions:
-    #         - len(message) <= 250
-    #     """
-    #     self._notes = message
-
     def get_notes(self) -> str:
         """Return the _notes attribute
         """
@@ -119,7 +113,19 @@ class Note(models.Model):
             self._notes += message
 
 
+class SuggestedPractice(models.Model):
+    """shows suggested questions and topics that they are from
+    === Representation Invariants===
+    - topic_most_missed is always a key in the question_bank
+    """
+    question_suggested = models.CharField(max_length=200)
+    topic_most_missed = models.CharField(max_length=200)
+    suggested_at = models.DateTimeField(auto_now_add=True)
 
+
+class ProgressTracker(models.Model):
+    mark = models.IntegerField()
+    topic = models.CharField(max_length=200)
 
 
 class Student(models.Model):
@@ -138,7 +144,7 @@ class Student(models.Model):
     every key in topic_notes must also be in student_topics
     """
 
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     questions = []
     topics = []
     score = []
@@ -146,40 +152,3 @@ class Student(models.Model):
     def get_topics(self):
         return topics
     # def add_topic
-
-class SuggestedPractice(models.Model):
-    """shows suggested questions and topics that they are from
-     === Public Attributes ===
-    student:
-        a student object used to obtain completed questions and missed topics
-        for suggested practice questions
-    === Representation Invariants===
-    - topic_most_missed is always a key in the question_bank
-    """
-    question_suggested = models.CharField(max_length=200)
-    topic_most_missed = models.CharField(max_length=200)
-    suggested_at = models.DateTimeField(auto_now_add=True)
-
-    def get_topic_most_missed(self):
-        """return the topic the student is weakest in by calling on
-        a method from the StudentPerformance Class"""
-        self.topic_most_missed = StudentPerformance(
-            self.student).get_topic_most_missed()
-        return self.topic_most_missed
-
-    def get_question(self):
-        """return a question object from the question bank by calling on
-        StudentManager for the student to practice"""
-        li = StudentManager(self.student).get_all_questions()
-        for i in li[self.get_topic_most_missed()]:
-            if li[self.get_topic_most_missed()] == self.student.get_completed_questions()\
-                    or li[self.get_topic_most_missed()] == []:
-                return "congratulations, you have finished all your practice!"
-            if i not in self.student.get_completed_questions():
-                self.question_suggested = i
-                return i
-
-
-class ProgressTracker(models.Model):
-    mark = models.IntegerField()
-    topic = models.CharField(max_length=200)
