@@ -91,6 +91,13 @@ class Note(models.Model):
     # Replaces the init method
     _notes = models.CharField(max_length=250)
 
+    # def __init__(self, message) -> None:
+    #     """Initialize this note with <message>
+    #     Preconditions:
+    #         - len(message) <= 250
+    #     """
+    #     self._notes = message
+
     def get_notes(self) -> str:
         """Return the _notes attribute
         """
@@ -111,21 +118,6 @@ class Note(models.Model):
         """
         if len(self._notes + message) <= 250:
             self._notes += message
-
-
-class SuggestedPractice(models.Model):
-    """shows suggested questions and topics that they are from
-    === Representation Invariants===
-    - topic_most_missed is always a key in the question_bank
-    """
-    question_suggested = models.CharField(max_length=200)
-    topic_most_missed = models.CharField(max_length=200)
-    suggested_at = models.DateTimeField(auto_now_add=True)
-
-
-class ProgressTracker(models.Model):
-    mark = models.IntegerField()
-    topic = models.CharField(max_length=200)
 
 
 class Student(models.Model):
@@ -152,3 +144,18 @@ class Student(models.Model):
     def get_topics(self):
         return topics
     # def add_topic
+
+
+class SuggestedPractice(models.Model):
+    """shows suggested questions and topics that they are from
+    === Representation Invariants===
+    - topic_most_missed is always a key in the question_bank
+    """
+    question_suggested = models.CharField(max_length=200)
+    topic_most_missed = models.CharField(max_length=200)
+    suggested_at = models.DateTimeField(auto_now_add=True)
+
+
+class ProgressTracker(models.Model):
+    mark = models.IntegerField()
+    topic = models.CharField(max_length=200)
