@@ -5,7 +5,7 @@ const RatingStars = () => {
     const [gradeIndex, setGradeIndex] = useState();
     const GRADES = ['Not started', 'Just started', 'In Progress', 'Advanced', 'Completed'];
     const activeStar = {
-        fill: 'yellow'
+        fill: 'blue'
     };
 
     const changeGradeIndex = ( index ) => {
@@ -14,7 +14,7 @@ const RatingStars = () => {
 
     return (
         <div className="container">
-            <h1 className="result">{ GRADES[gradeIndex] ? GRADES[gradeIndex] : ""}</h1>
+            <h5 className="result">{ GRADES[gradeIndex] ? GRADES[gradeIndex] : ""}</h5>
             <div className="stars">
                 {
                     GRADES.map((grade, index) => (
@@ -22,7 +22,7 @@ const RatingStars = () => {
                             index={index} 
                             key={grade} 
                             changeGradeIndex={changeGradeIndex}
-                            style={ gradeIndex > index ? activeStar : {}}
+                            style={ gradeIndex > index ? activeStar : {} }
                         />
                     ))
                 }
