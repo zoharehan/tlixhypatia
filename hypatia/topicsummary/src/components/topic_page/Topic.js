@@ -28,13 +28,13 @@ export class Topic extends Component {
                   style={{
                     borderRadius: "5px",
                     padding: "20px",
-                    boxShadow: "2px 2px lightgrey",
+                    boxShadow: "2px 2px #e5e5e5",
                   }}
                 >
                   <a
                     key={topic.id}
                     class="card-block"
-                    href="https://sophysun.me"
+                    href={`/summary/${topic.id}`}
                   >
                     <h5
                       class="card-title"

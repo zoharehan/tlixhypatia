@@ -8,6 +8,7 @@ import {
   getSuggestedPractices,
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
+import suggestedpractices from "../../reducers/suggestedpractices";
 
 export class Practice extends Component {
   static PropTypes = {
@@ -30,14 +31,14 @@ export class Practice extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.suggestedpractices.map((suggestedpracticee) => (
-              <tr key={suggestedpracticee.id}>
-                <td>{suggestedpracticee.question_suggested}</td>
+            {this.props.suggestedpractices.map((suggestedpractice) => (
+              <tr key={suggestedpractice.id}>
+                <td>{suggestedpractice.question_suggested}</td>
                 <td>
                   <button
                     onClick={this.props.deleteSuggestedPractices.bind(
                       this,
-                      suggestedpracticee.id
+                      suggestedpractice.id
                     )}
                     className="btn btn-success btn-sm"
                   >

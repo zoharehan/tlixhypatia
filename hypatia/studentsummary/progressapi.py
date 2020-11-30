@@ -1,9 +1,8 @@
 from studentsummary.models import ProgressTracker
 from rest_framework import viewsets, permissions
 from .serializers import ProgressTrackerSerializer
-
-# ProgressTracker Viewset
-# this lets us create a full CRUD API w/o having to specify specific methods for the functionality
+from rest_framework.decorators import action
+from django.http import HttpResponse
 
 
 class ProgressTrackerViewSet(viewsets.ModelViewSet):
@@ -13,3 +12,18 @@ class ProgressTrackerViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = ProgressTrackerSerializer
+
+    def list(self, request):
+        # queryset = User.objects.all()
+        # serializer = UserSerializer(queryset, many=True)
+        print("responded")
+        if request.method == 'GET':
+            return HttpResponse("GET Request.")
+        elif request.method == 'POST':
+            print(request.body)
+            return HttpResponse("POST")
+
+        else: 
+            return HttpResponse("other requests")
+
+    # when you hit a URL.
