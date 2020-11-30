@@ -12,12 +12,12 @@ export default function(state = initialState, action) {
                 notes: action.payload
             };
         case DELETE_NOTES:
-            return{
+            return {
                 ...state,
                 notes: state.notes.filter(note => note.id !== action.payload)
             };
         case ADD_NOTES:
-            return{
+            return {
                 ...state,
                 notes: [...state.notes, action.payload]
             };
