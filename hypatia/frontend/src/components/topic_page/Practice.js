@@ -9,6 +9,11 @@ import {
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
 import suggestedpractices from "../../reducers/suggestedpractices";
+import Card from "react-bootstrap/Card";
+
+function rowStyleFormat(row, rowIdx) {
+  return { backgroundColor: rowIdx % 2 === 0 ? "red" : "blue" };
+}
 
 export class Practice extends Component {
   static PropTypes = {
@@ -23,33 +28,45 @@ export class Practice extends Component {
     return (
       <Fragment>
         <h2>Suggested Practice Questions</h2>
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Questions Suggested</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.suggestedpractices.map((suggestedpractice) => (
-              <tr key={suggestedpractice.id}>
-                <td>{suggestedpractice.question_suggested}</td>
-                <td>
-                  <button
-                    onClick={this.props.deleteSuggestedPractices.bind(
-                      this,
-                      suggestedpractice.id
-                    )}
-                    className="btn btn-success btn-sm"
-                  >
-                    {" "}
-                    Mark as Complete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Card
+          style={{
+            borderRadius: "5px",
+            boxShadow: "2px 2px #e5e5e5",
+            marginTop: "15px",
+            marginBottom: "20px",
+          }}
+        >
+          <Card.Body>
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th>Questions Suggested</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.props.suggestedpractices.map((suggestedpractice) => (
+                  <tr key={suggestedpractice.id}>
+                    <td>{suggestedpractice.question_suggested}</td>
+                    <td>
+                      <button
+                        style={{ borderRadius: "5px" }}
+                        onClick={this.props.deleteSuggestedPractices.bind(
+                          this,
+                          suggestedpractice.id
+                        )}
+                        className="btn btn-success btn-sm"
+                      >
+                        {" "}
+                        Mark as Complete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </Card.Body>
+        </Card>
       </Fragment>
     );
   }
