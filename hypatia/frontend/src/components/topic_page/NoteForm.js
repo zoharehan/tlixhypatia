@@ -16,9 +16,9 @@ export class NoteForm extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        //console.log("submit");
-        const { notes } = this.state;
-        const note = { notes };
+        //console.log(this.state);
+        const { _notes } = this.state;
+        const note = { _notes };
         this.props.addNotes(note);
     };
 
@@ -33,7 +33,7 @@ export class NoteForm extends Component {
                         <input
                             className="form-control"
                             type="text"
-                            name="Message"
+                            name="_notes"
                             onChange={this.onChange}
                             value={notes}
                         />
