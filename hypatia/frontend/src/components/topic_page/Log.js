@@ -28,26 +28,53 @@ export class Log extends Component {
             marginBottom: "20px",
           }}
         >
-          <Card.Body>
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Question Prompt</th>
-                  <th>Question Type</th>
-                  <th>Completion Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.props.questions.map((question) => (
-                  <tr key={question.id}>
-                    <td>{question.question_prompt}</td>
-                    <td>{question.topic_type}</td>
-                    <td>{question.created_at}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Card.Body>
+          {this.props.questions.map((question) => (
+            <div class="card-deck-wrapper" style={{ padding: "10px" }}>
+              <div class="card-deck">
+                <div
+                  class="card"
+                  style={{
+                    borderRadius: "5px",
+                    boxShadow: "2px 2px #e5e5e5",
+                    padding: "5px",
+                  }}
+                >
+                  <h5 style={{ padding: "5px" }}>Question Prompt:</h5>
+                  <h6
+                    class="card-title"
+                    style={{
+                      marginLeft: "5px",
+                      color: "black",
+                      "& h4:hover": {
+                        backgroundcolor: "pink",
+                      },
+                    }}
+                  >
+                    {question.question_prompt}
+                  </h6>
+                  <div className="details-line" style={{ clear: "both" }}>
+                    <h6
+                      style={{
+                        marginLeft: "5px",
+                        float: "left",
+                      }}
+                    >
+                      Topic: {question.topic_type}
+                    </h6>
+                    <h6
+                      style={{
+                        marginLeft: "5px",
+                        marginRight: "5px",
+                        float: "right",
+                      }}
+                    >
+                      Submission Time: {question.created_at}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </Card>
       </Fragment>
     );

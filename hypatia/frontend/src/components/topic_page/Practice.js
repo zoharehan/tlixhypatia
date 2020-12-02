@@ -11,10 +11,6 @@ import {
 import suggestedpractices from "../../reducers/suggestedpractices";
 import Card from "react-bootstrap/Card";
 
-function rowStyleFormat(row, rowIdx) {
-  return { backgroundColor: rowIdx % 2 === 0 ? "red" : "blue" };
-}
-
 export class Practice extends Component {
   static PropTypes = {
     suggestedpractices: PropTypes.array.isRequired,
@@ -36,36 +32,60 @@ export class Practice extends Component {
             marginBottom: "20px",
           }}
         >
-          <Card.Body>
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Questions Suggested</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.props.suggestedpractices.map((suggestedpractice) => (
-                  <tr key={suggestedpractice.id}>
-                    <td>{suggestedpractice.question_suggested}</td>
-                    <td>
-                      <button
-                        style={{ borderRadius: "5px" }}
-                        onClick={this.props.deleteSuggestedPractices.bind(
-                          this,
-                          suggestedpractice.id
-                        )}
-                        className="btn btn-success btn-sm"
-                      >
-                        {" "}
-                        Mark as Complete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Card.Body>
+          {this.props.suggestedpractices.map((suggestedpractice) => (
+            <div class="card-deck-wrapper" style={{ padding: "10px" }}>
+              <div class="card-deck">
+                <div
+                  class="card"
+                  style={{
+                    borderRadius: "5px",
+                    boxShadow: "2px 2px #e5e5e5",
+                    padding: "5px",
+                  }}
+                >
+                  <h5 style={{ padding: "5px" }}>Question Prompt:</h5>
+                  <h6
+                    class="card-title"
+                    style={{
+                      marginLeft: "5px",
+                      color: "black",
+                      "& h4:hover": {
+                        backgroundcolor: "pink",
+                      },
+                    }}
+                  >
+                    {suggestedpractice.question_suggested}
+                  </h6>
+                  <h6
+                    style={{
+                      marginLeft: "5px",
+                      float: "left",
+                    }}
+                  >
+                    Topic: {suggestedpractice.topic_most_missed}
+                  </h6>
+                  <button
+                    style={{
+                      borderRadius: "5px",
+                      width: "80px",
+                      height: "30px",
+                      position: "absolute",
+                      top: "35px",
+                      right: "30px",
+                    }}
+                    onClick={this.props.deleteSuggestedPractices.bind(
+                      this,
+                      suggestedpractice.id
+                    )}
+                    className="btn btn-success btn-sm"
+                  >
+                    {" "}
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </Card>
       </Fragment>
     );
