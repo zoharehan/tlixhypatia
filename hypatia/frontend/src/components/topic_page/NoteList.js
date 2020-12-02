@@ -22,29 +22,24 @@ export class NoteList extends Component {
           style={{
             borderRadius: "5px",
             boxShadow: "2px 2px #e5e5e5",
-            marginTop: "15px",
             marginBottom: "20px",
+            marginLeft: "20px",
+            marginTop: "20px",
+            flex: 0.7,
           }}
         >
           <Card.Body>
             <h2>Notes</h2>
             <table className="table table-stripped">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Message</th>
-                  <th />
-                </tr>
-              </thead>
               <tbody>
                 {this.props.notes.map((note) => (
                   <tr key={note.id}>
-                    <td>{note.id}</td>
                     <td>{note._notes}</td>
                     <td>
                       <button
                         onClick={this.props.deleteNotes.bind(this, note.id)}
                         className="btn btn-danger btn-sm"
+                        style={{ float: "right", borderRadius: "5px" }}
                       >
                         Delete
                       </button>

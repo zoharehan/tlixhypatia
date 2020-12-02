@@ -12,8 +12,17 @@ export default function Dashboard() {
       <Progress />
       <Log />
       <Practice />
-      <NoteList />
-      <NoteForm />
+      <div
+        className="notes-block"
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          marginTop: "20px",
+        }}
+      >
+        <NoteForm style={{ marginRight: "200px" }} />
+        <NoteList />
+      </div>
     </Fragment>
   );
 }
