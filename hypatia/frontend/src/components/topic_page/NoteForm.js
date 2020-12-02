@@ -39,8 +39,8 @@ export class NoteForm extends Component {
           <div className="form-group">
             <h6>Something for Future You!</h6>
             <input
-              className="form-control"
-              style={{ height: 250, textAlign: "left" }}
+              className="form-control align-content-start"
+              style={{ height: 250, alignContent: "start" }}
               type="text"
               name="_notes"
               onChange={this.onChange}
