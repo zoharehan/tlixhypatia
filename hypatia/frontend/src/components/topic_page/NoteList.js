@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getNotes } from "../../actions/notes";
+import { getNotes, deleteNotes } from "../../actions/notes";
 import Card from "react-bootstrap/Card";
 
 export class NoteList extends Component {
   static propTypes = {
     notes: PropTypes.array.isRequired,
-    //Add prop types for getNotes
+    getNotes: PropTypes.func.isRequired,
+    deleteNotes: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -17,7 +18,6 @@ export class NoteList extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Notes</h2>
         <Card
           style={{
             borderRadius: "5px",
@@ -27,21 +27,24 @@ export class NoteList extends Component {
           }}
         >
           <Card.Body>
-            <table className="table table-striped">
+            <h2>Notes</h2>
+            <table className="table table-stripped">
               <thead>
                 <tr>
-                  <th>Saved Notes</th>
+                  <th>ID</th>
+                  <th>Message</th>
                   <th />
                 </tr>
               </thead>
               <tbody>
                 {this.props.notes.map((note) => (
                   <tr key={note.id}>
+                    <td>{note.id}</td>
                     <td>{note._notes}</td>
                     <td>
                       <button
+                        onClick={this.props.deleteNotes.bind(this, note.id)}
                         className="btn btn-danger btn-sm"
-                        style={{ borderRadius: "5px" }}
                       >
                         Delete
                       </button>
@@ -61,4 +64,4 @@ const mapStateToProps = (state) => ({
   notes: state.notes.notes,
 });
 
-export default connect(mapStateToProps, { getNotes })(NoteList);
+export default connect(mapStateToProps, { getNotes, deleteNotes })(NoteList);
