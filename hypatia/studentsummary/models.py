@@ -19,6 +19,7 @@ class Topic(models.Model):
     def unlock(self) -> None:
         self.status = True
 
+
 class Question(models.Model):
     """
     A Math Question in an assignment/assessment.
@@ -42,7 +43,7 @@ class Question(models.Model):
     # db give each Question object an id , so I will add a time field instead
 
     question_prompt = models.CharField(max_length=200)
-    topic_type = models.ForeignKey(Topic,on_delete = models.CASCADE)
+    topic_type = models.ForeignKey(Topic, on_delete=models.CASCADE)
     # topic_type = models.CharField(max_length = 200)
     # time will be added automatically
     created_at = models.DateTimeField(auto_now_add=True)
@@ -136,7 +137,7 @@ class Student(models.Model):
     every key in topic_notes must also be in student_topics
     """
 
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     questions = []
     topics = []
     score = []
@@ -144,6 +145,7 @@ class Student(models.Model):
     def get_topics(self):
         return topics
     # def add_topic
+
 
 class SuggestedPractice(models.Model):
     """shows suggested questions and topics that they are from
@@ -180,5 +182,4 @@ class SuggestedPractice(models.Model):
 
 class ProgressTracker(models.Model):
     mark = models.IntegerField()
-    topic = models.ForeignKey(Topic,on_delete = models.CASCADE)
-    
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
