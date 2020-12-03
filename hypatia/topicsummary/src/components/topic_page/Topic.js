@@ -34,7 +34,7 @@ export class Topic extends Component {
                   <a
                     key={topic.id}
                     class="card-block"
-                    href={`/summary/${topic.id}`}
+                    href={`/summary/${topic.name}`}
                   >
                     <h5
                       class="card-title"
