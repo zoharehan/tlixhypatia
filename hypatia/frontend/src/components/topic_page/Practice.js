@@ -9,6 +9,7 @@ import {
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
 import suggestedpractices from "../../reducers/suggestedpractices";
+import Card from "react-bootstrap/Card";
 
 export class Practice extends Component {
   static PropTypes = {
@@ -23,19 +24,55 @@ export class Practice extends Component {
     return (
       <Fragment>
         <h2>Suggested Practice Questions</h2>
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Questions Suggested</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.suggestedpractices.map((suggestedpractice) => (
-              <tr key={suggestedpractice.id}>
-                <td>{suggestedpractice.question_suggested}</td>
-                <td>
+        <Card
+          style={{
+            borderRadius: "5px",
+            boxShadow: "2px 2px #e5e5e5",
+            marginTop: "15px",
+            marginBottom: "20px",
+          }}
+        >
+          {this.props.suggestedpractices.map((suggestedpractice) => (
+            <div class="card-deck-wrapper" style={{ padding: "10px" }}>
+              <div class="card-deck">
+                <div
+                  class="card"
+                  style={{
+                    borderRadius: "5px",
+                    boxShadow: "2px 2px #e5e5e5",
+                    padding: "5px",
+                  }}
+                >
+                  <h5 style={{ padding: "5px" }}>Question Prompt:</h5>
+                  <h6
+                    class="card-title"
+                    style={{
+                      marginLeft: "5px",
+                      color: "black",
+                      "& h4:hover": {
+                        backgroundcolor: "pink",
+                      },
+                    }}
+                  >
+                    {suggestedpractice.question_suggested}
+                  </h6>
+                  <h6
+                    style={{
+                      marginLeft: "5px",
+                      float: "left",
+                    }}
+                  >
+                    Topic: {suggestedpractice.topic_most_missed}
+                  </h6>
                   <button
+                    style={{
+                      borderRadius: "5px",
+                      width: "80px",
+                      height: "30px",
+                      position: "absolute",
+                      top: "35px",
+                      right: "30px",
+                    }}
                     onClick={this.props.deleteSuggestedPractices.bind(
                       this,
                       suggestedpractice.id
@@ -43,13 +80,13 @@ export class Practice extends Component {
                     className="btn btn-success btn-sm"
                   >
                     {" "}
-                    Mark as Complete
+                    Completed
                   </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Card>
       </Fragment>
     );
   }

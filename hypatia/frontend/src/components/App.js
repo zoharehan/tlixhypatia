@@ -11,12 +11,14 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Fragment>
-          <Header />
-          <div className="container">
-            <Dashboard />
-          </div>
-        </Fragment>
+        <div style={{ backgroundColor: "#f5f5f5" }}>
+          <Fragment>
+            <Header />
+            <div className="container">
+              <Dashboard />
+            </div>
+          </Fragment>
+        </div>
       </Provider>
     );
   }
