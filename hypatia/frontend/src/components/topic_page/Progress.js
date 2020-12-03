@@ -45,15 +45,17 @@ export class Progress extends Component {
   // };
 
   render() {
-    const k = this.props.questions.length; 
+    const k = this.props.questions.length;
     return (
       <div style={{ marginBottom: 30, marginTop: 30 }}>
+        <h2>Your Progress</h2>
         <ProgressBar
-          now={this.percentageLimits(0, k*10, 100)}
+          now={this.percentageLimits(0, k * 10, 100)}
           style={{
             height: 25,
             borderRadius: 25,
             marginBottom: "5px",
+            marginTop: "5px",
             boxShadow: "2px 2px #e5e5e5",
           }}
         />
