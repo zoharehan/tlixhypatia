@@ -1,4 +1,4 @@
-# tlixhypatia (Hypatia summary page web app)
+# TLIxHypatia - Hypatia Summary Page Web App!
 
 Creating a web application interface for elementary students to learn math. 
 
@@ -41,12 +41,11 @@ Finally, to run it in the terminal shell, start your virtual environment, and en
   - npm install react-bootstrap bootstrap
   - pip install Django-crispy-forms
   
-# How to turn on our application
+# Essentials needed to know to use our application
 
 ### Models & Migrations ###
 
 everytime you make a new model, or if you're running this for the first time, run these commands in your terminal when you are in the hypatia folder:
-
 
 1. python3 manage.py makemigrations
 2. python3 manage.py migrate
@@ -56,6 +55,17 @@ everytime you make a new model, or if you're running this for the first time, ru
 - On one terminal: npm run dev & another separate terminal window: python3 manage.py runserver
 - npm run dev => compile react application for development so we can view in the browser
 - npm run build => to deploy
+
+### Question Standard ###
+We must receive questions from the hypatia application with document names that have the following format:
+- <topic_type>-<question_prompt>.etz
+
+### Topic Standard ###
+We are dealing with the 4 topic belows for this applications:
+1. Addition
+2. Subtraction
+3. Multipliation
+4. Division
 
 ### Admin Info ###
 
