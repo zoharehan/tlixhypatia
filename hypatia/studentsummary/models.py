@@ -43,7 +43,7 @@ class Question(models.Model):
     # db give each Question object an id , so I will add a time field instead
 
     question_prompt = models.CharField(max_length=200)
-    topic_type = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    topic_type = models.CharField(max_length=200)
     # topic_type = models.CharField(max_length = 200)
     # time will be added automatically
     created_at = models.DateTimeField(auto_now_add=True)
@@ -159,4 +159,4 @@ class SuggestedPractice(models.Model):
 
 class ProgressTracker(models.Model):
     mark = models.IntegerField()
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    topic = models.CharField(max_length=200)
