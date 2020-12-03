@@ -2,9 +2,20 @@
 important announcement: topic_summary works: http://127.0.0.1:8000/summary/
 Pre-Run Installations:
 1. For the Hypatia Python Server:
-  - pip install eventlet
-  - pip install python-socketio
-  - download the json package for your IDE
+- cd tlixhypatia
+- cd checkmath_api
+
+and then,
+
+- pip install eventlet
+- pip install python-socketio
+- pip install requests
+- download the json package for your IDE
+  
+Finally, to run it in the terminal shell, start your virtual environment, and enter,
+
+- python server.py
+
 2. The Companion Application:
   - pip install pipenv => the virtual environment
   (if using pipenv, the commands starting with pip in the next lines will be replaced with pipenv)
