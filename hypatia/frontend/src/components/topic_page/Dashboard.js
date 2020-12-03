@@ -6,16 +6,23 @@ import Progress from "./Progress";
 import NoteForm from "./NoteForm";
 import NoteList from "./NoteList";
 
-
 export default function Dashboard() {
   return (
     <Fragment>
       <Progress />
       <Log />
       <Practice />
-      <NoteList />
-      <NoteForm />
-      
+      <div
+        className="notes-block"
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          marginTop: "20px",
+        }}
+      >
+        <NoteForm style={{ marginRight: "200px" }} />
+        <NoteList />
+      </div>
     </Fragment>
   );
 }

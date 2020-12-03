@@ -2,14 +2,14 @@
 // to work with redux from this component
 
 import React, { Component, Fragment } from "react";
-import ReactDOM from 'react-dom'
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import {
   getSuggestedPractices,
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
-
+import suggestedpractices from "../../reducers/suggestedpractices";
+import Card from "react-bootstrap/Card";
 
 export class Practice extends Component {
   static PropTypes = {
@@ -20,76 +20,77 @@ export class Practice extends Component {
     this.props.getSuggestedPractices();
   }
 
-  // Count = () =>{
-  //   const length = this.props.suggestedpractices.length;
-  //   return length;
-  // }
-  
   render() {
-    // const length = Count();
     return (
       <Fragment>
         <h2>Suggested Practice Questions</h2>
-        {/* <p>the length is {length} </p> */}
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Questions Suggested</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.suggestedpractices.map((suggestedpracticee) => (
-              <tr key={suggestedpracticee.id}>
-                <td>{suggestedpracticee.question_suggested}</td>
-                <td>
-                  <button type="button" 
-                  // class="btn btn-primary" id = "complete" 
-                  // data-toggle="modal" data-target="#example"    
-                  onClick={this.props.deleteSuggestedPractices.bind(
-                       this, suggestedpracticee.id
-                     )}
-                     className="btn btn-success btn-sm"
+        <Card
+          style={{
+            borderRadius: "5px",
+            boxShadow: "2px 2px #e5e5e5",
+            marginTop: "15px",
+            marginBottom: "20px",
+          }}
+        >
+          {this.props.suggestedpractices.map((suggestedpractice) => (
+            <div class="card-deck-wrapper" style={{ padding: "10px" }}>
+              <div class="card-deck">
+                <div
+                  class="card"
+                  style={{
+                    borderRadius: "5px",
+                    boxShadow: "2px 2px #e5e5e5",
+                    padding: "5px",
+                  }}
+                >
+                  <h5 style={{ padding: "5px" }}>Question Prompt:</h5>
+                  <h6
+                    class="card-title"
+                    style={{
+                      marginLeft: "5px",
+                      color: "black",
+                      "& h4:hover": {
+                        backgroundcolor: "pink",
+                      },
+                    }}
+                  >
+                    {suggestedpractice.question_suggested}
+                  </h6>
+                  <h6
+                    style={{
+                      marginLeft: "5px",
+                      float: "left",
+                    }}
+                  >
+                    Topic: {suggestedpractice.topic_most_missed}
+                  </h6>
+                  <button
+                    style={{
+                      borderRadius: "5px",
+                      width: "80px",
+                      height: "30px",
+                      position: "absolute",
+                      top: "35px",
+                      right: "30px",
+                    }}
+                    onClick={this.props.deleteSuggestedPractices.bind(
+                      this,
+                      suggestedpractice.id
+                    )}
+                    className="btn btn-success btn-sm"
                   >
                     {" "}
-                    Mark as Complete
+                    Completed
                   </button>
-
-                  {/* <!-- Modal --> */}
-                  <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Great</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          Please confirm to add new question. 
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Card>
       </Fragment>
     );
   }
 }
-
-
-export function add(x,y) {
-  return x+y;
-}
-
 const mapStateToProps = (state) => ({
   suggestedpractices: state.suggestedpractices.suggestedpractices,
 });
