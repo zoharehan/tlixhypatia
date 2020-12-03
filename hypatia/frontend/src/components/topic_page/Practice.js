@@ -10,15 +10,56 @@ import {
 } from "../../actions/suggestedpractices";
 import suggestedpractices from "../../reducers/suggestedpractices";
 import Card from "react-bootstrap/Card";
+import axios from 'axios';
+import { addQuestion } from "../../actions/questions";
 
 export class Practice extends Component {
   static PropTypes = {
     suggestedpractices: PropTypes.array.isRequired,
+    addQuestion: PropTypes.func.isRequired
   };
 
   componentDidMount() {
     this.props.getSuggestedPractices();
   }
+
+
+  // state = {
+  //   question_suggested = "",
+  //   topic_most_missed = "",
+  // };
+
+  deleteAndPost(suggestedpractice){
+    this.props.deleteSuggestedPractices.bind(
+      this,
+      suggestedpractice.id
+    )
+
+    // const question = {
+    //   "question_prompt": suggestedpractice.question_suggested,
+    //   "topic_type": suggestedpractice.topic_most_missed
+    // }
+    // axios.post('http://127.0.0.1:8000/questionapi/question/', question)
+
+    //this.props.addQuestion(question);
+
+  }
+
+  // QUESTIONAPI_ENDPOINT = 'http://127.0.0.1:8000/questionapi/question/'
+
+  // question_data = {
+  //     "question_prompt": question_prompt,
+  //     "topic_type": topic_type
+  // }
+
+  // r = requests.post(url=QUESTIONAPI_ENDPOINT, data=question_data)
+
+  //OnClick = axios.post(url='http://127.0.0.1:8000/questionapi/question/', data=suggestedpractice)
+
+  // this.deleteAndPost(suggestedpractice)
+
+  //addquestion.bind(parameter)
+
 
   render() {
     return (
@@ -73,10 +114,10 @@ export class Practice extends Component {
                       top: "35px",
                       right: "30px",
                     }}
-                    onClick={this.props.deleteSuggestedPractices.bind(
-                      this,
-                      suggestedpractice.id
-                    )}
+                    // onClick={this.props.addQuestion({
+                    //     "question_prompt": suggestedpractice.question_suggested,
+                    //     "topic_type": suggestedpractice.topic_most_missed
+                    //   })}
                     className="btn btn-success btn-sm"
                   >
                     {" "}
@@ -97,5 +138,6 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
   getSuggestedPractices,
-  deleteSuggestedPractices,
+  deleteSuggestedPractices, 
+  addQuestion
 })(Practice);

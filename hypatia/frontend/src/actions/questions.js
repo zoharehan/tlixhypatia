@@ -2,7 +2,7 @@
 // this where make all of our HTTP requests
 
 import axios from "axios";
-import { GET_QUESTIONS } from "./types";
+import { GET_QUESTIONS, ADD_QUESTIONS } from "./types";
 
 //GET QUESTIONS
 // from question api created earlier
@@ -13,6 +13,22 @@ export const getQuestion = () => (dispatch) => {
     .then((res) => {
       dispatch({
         type: GET_QUESTIONS,
+        payload: res.data,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+
+//ADD QUESTIONS
+// from question api created earlier
+
+export const addQuestion = (question) => (dispatch) => {
+  axios
+    .post("/questionapi/question/", question)
+    .then((res) => {
+      dispatch({
+        type: ADD_QUESTIONS,
         payload: res.data,
       });
     })
