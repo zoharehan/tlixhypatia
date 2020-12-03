@@ -16,7 +16,10 @@ export class Log extends Component {
     this.props.getQuestion();
   }
 
+
   render() {
+    console.log(window.location.pathname);
+
     return (
       <Fragment>
         <h2>Questions Completed</h2>
