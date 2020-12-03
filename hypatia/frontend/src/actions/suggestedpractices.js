@@ -2,10 +2,12 @@ import axios from "axios";
 
 import { GET_SUGGESTEDPRACTICES, DELETE_SUGGESTEDPRACTICES } from "./types";
 
+var path = window.location.pathname.split('/')[2]
+
 //GET SUGGESTED_PRACTICES
 export const getSuggestedPractices = () => (dispatch) => {
   axios
-    .get("/suggestedpracticeapi/suggestedpractice/")
+    .get(`/suggestedpracticeapi/suggestedpractice?topic_most_missed=${path}`)
     .then((res) => {
       dispatch({
         type: GET_SUGGESTEDPRACTICES,
