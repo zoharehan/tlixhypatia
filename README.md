@@ -1,6 +1,14 @@
-# tlixhypatia
-important announcement: topic_summary works: http://127.0.0.1:8000/summary/
-Pre-Run Installations:
+# tlixhypatia (Hypatia summary page web app)
+
+Creating a web application interface for elementary students to learn math. 
+
+Stack: Django, Django REST, React, Redux
+
+Used: bootswatch(customized bootstrap), bootstrap
+
+# Pre-Run Installations:
+
+### SocketIO ###
 1. For the Hypatia Python Server:
 - cd tlixhypatia
 - cd checkmath_api
@@ -16,6 +24,7 @@ Finally, to run it in the terminal shell, start your virtual environment, and en
 
 - python server.py
 
+### Companion Application ####
 2. The Companion Application:
   - pip install pipenv => the virtual environment
   (if using pipenv, the commands starting with pip in the next lines will be replaced with pipenv)
@@ -32,38 +41,40 @@ Finally, to run it in the terminal shell, start your virtual environment, and en
   - npm install react-bootstrap bootstrap
   - pip install Django-crispy-forms
   
+# How to turn on our application
+
+### Models & Migrations ###
+
 everytime you make a new model, or if you're running this for the first time, run these commands in your terminal when you are in the hypatia folder:
 
 
 1. python3 manage.py makemigrations
 2. python3 manage.py migrate
 
+### How to start react ###
 
-How to start react: npm run dev
-then run, on a separate terminal window:
-python3 manage.py runserver
+- On one terminal: npm run dev & another separate terminal window: python3 manage.py runserver
+- npm run dev => compile react application for development so we can view in the browser
+- npm run build => to deploy
+
+### Admin Info ###
 
 username: admin
 password: password
 email: admin@example.com
 
 
-#hypatia summary page web app
+# Links
 
+### Main Pages ###
 
-Creating a web application interface for elementary students to learn math. 
+1. main default page: http://127.0.0.1:8000/summary/
 
+2. topic page: http://127.0.0.1:8000/summary/
 
-Stack: Django, Django REST, React, Redux
+3. topic summary page: http://127.0.0.1:8000/summary/<topic_id> (Need to have topic id already in topicAPI)
 
-Used: bootswatch(customized bootstrap), bootstrap
-
-npm run dev => compile react application for development so we can view in the browser
-
-npm run build => to deploy
-
-
-APIs Links:
+### APIs Links ###
 
 1. questionapi: http://127.0.0.1:8000/questionapi/question/
 
