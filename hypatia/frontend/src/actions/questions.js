@@ -7,9 +7,13 @@ import { GET_QUESTIONS } from "./types";
 //GET QUESTIONS
 // from question api created earlier
 
+var path = window.location.pathname.split('/')[2]
+
+console.log(path);
+
 export const getQuestion = () => (dispatch) => {
   axios
-    .get("/questionapi/question/")
+    .get(`/questionapi/question?topic_type=${path}`)
     .then((res) => {
       dispatch({
         type: GET_QUESTIONS,

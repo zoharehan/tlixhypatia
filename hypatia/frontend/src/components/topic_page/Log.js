@@ -18,7 +18,10 @@ export class Log extends Component {
 
 
   render() {
-    console.log(window.location.pathname);
+    // var path = window.location.pathname.split('/')[2]
+    //
+    // console.log(path);
+
 
     return (
       <Fragment>
