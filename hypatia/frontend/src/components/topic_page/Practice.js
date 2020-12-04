@@ -29,11 +29,12 @@ export class Practice extends Component {
   //   topic_most_missed = "",
   // };
 
-  deleteAndPost(suggestedpractice){
-    this.props.deleteSuggestedPractices.bind(
-      this,
-      suggestedpractice.id
-    )
+  // function deleteAndPost(suggestedpractice) {
+  //   this.props.deleteSuggestedPractices.bind(
+  //     this,
+  //     suggestedpractice.id
+  //   )
+  // }
 
     // const question = {
     //   "question_prompt": suggestedpractice.question_suggested,
@@ -43,7 +44,6 @@ export class Practice extends Component {
 
     //this.props.addQuestion(question);
 
-  }
 
   // QUESTIONAPI_ENDPOINT = 'http://127.0.0.1:8000/questionapi/question/'
 
@@ -114,10 +114,16 @@ export class Practice extends Component {
                       top: "35px",
                       right: "30px",
                     }}
-                    // onClick={this.props.addQuestion({
-                    //     "question_prompt": suggestedpractice.question_suggested,
-                    //     "topic_type": suggestedpractice.topic_most_missed
-                    //   })}
+                    onClick={this.props.deleteSuggestedPractices.bind(
+                      this,
+                      suggestedpractice.id
+                    )}
+                    onClick={this.props.addQuestion.bind(
+                      this,
+                      {
+                        "question_prompt": suggestedpractice.question_suggested,
+                        "topic_type": suggestedpractice.topic_most_missed
+                      })}
                     className="btn btn-success btn-sm"
                   >
                     {" "}
