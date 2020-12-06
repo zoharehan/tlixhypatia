@@ -7,6 +7,7 @@ from .progressapi import ProgressTrackerViewSet
 from django.urls import path
 from . import views
 
+
 router = routers.DefaultRouter()
 router.register('questionapi/question', QuestionViewSet,
                 'question')  # (endpoint/question, viewset)
@@ -17,6 +18,7 @@ router.register('suggestedpracticeapi/suggestedpractice',
 router.register('progressapi/progress', ProgressTrackerViewSet, 'progress')
 
 urlpatterns = router.urls
+
 
 # urlpatterns = [
 #     path('',views.index,name= "index"),

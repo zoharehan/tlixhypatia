@@ -16,7 +16,13 @@ export class Log extends Component {
     this.props.getQuestion();
   }
 
+
   render() {
+    // var path = window.location.pathname.split('/')[2]
+    //
+    // console.log(path);
+
+
     return (
       <Fragment>
         <h2>Questions Completed</h2>
