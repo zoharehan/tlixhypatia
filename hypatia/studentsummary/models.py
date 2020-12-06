@@ -91,6 +91,7 @@ class Note(models.Model):
 
     # Replaces the init method
     _notes = models.CharField(max_length=250)
+    topic_type = models.CharField(max_length=200, default="")
 
     # def __init__(self, message) -> None:
     #     """Initialize this note with <message>
