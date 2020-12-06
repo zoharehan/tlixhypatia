@@ -94,5 +94,4 @@ email: admin@example.com
 
 4. notesapi: http://127.0.0.1:8000/noteapi/notes
 
-GET /questionapi/question/?topic_type=addition
 
