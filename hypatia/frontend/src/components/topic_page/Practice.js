@@ -14,7 +14,8 @@ import axios from 'axios';
 import { addQuestion } from "../../actions/questions";
 
 export class Practice extends Component {
-  static PropTypes = {
+  
+  static propTypes = {
     suggestedpractices: PropTypes.array.isRequired,
     addQuestion: PropTypes.func.isRequired
   };
@@ -23,11 +24,6 @@ export class Practice extends Component {
     this.props.getSuggestedPractices();
   }
 
-
-  // state = {
-  //   question_suggested = "",
-  //   topic_most_missed = "",
-  // };
 
   // function deleteAndPost(suggestedpractice) {
   //   this.props.deleteSuggestedPractices.bind(
@@ -44,21 +40,9 @@ export class Practice extends Component {
 
     //this.props.addQuestion(question);
 
-
-  // QUESTIONAPI_ENDPOINT = 'http://127.0.0.1:8000/questionapi/question/'
-
-  // question_data = {
-  //     "question_prompt": question_prompt,
-  //     "topic_type": topic_type
-  // }
-
-  // r = requests.post(url=QUESTIONAPI_ENDPOINT, data=question_data)
-
-  //OnClick = axios.post(url='http://127.0.0.1:8000/questionapi/question/', data=suggestedpractice)
-
-  // this.deleteAndPost(suggestedpractice)
-
-  //addquestion.bind(parameter)
+  deleteClick (suggestedpractice) {
+    this.props.deleteSuggestedPractices(suggestedpractice.id);
+  }
 
 
   render() {
@@ -114,16 +98,17 @@ export class Practice extends Component {
                       top: "35px",
                       right: "30px",
                     }}
-                    onClick={this.props.deleteSuggestedPractices.bind(
-                      this,
-                      suggestedpractice.id
-                    )}
-                    onClick={this.props.addQuestion.bind(
-                      this,
-                      {
-                        "question_prompt": suggestedpractice.question_suggested,
-                        "topic_type": suggestedpractice.topic_most_missed
-                      })}
+                    // onClick={this.props.deleteSuggestedPractices.bind(
+                    //   this,
+                    //   suggestedpractice.id
+                    // )}
+                    OnClick={() => this.deleteClick(suggestedpractice)}
+                    // onClick={this.props.addQuestion.bind(
+                    //   this,
+                    //   {
+                    //     "question_prompt": suggestedpractice.question_suggested,
+                    //     "topic_type": suggestedpractice.topic_most_missed
+                    //   })}
                     className="btn btn-success btn-sm"
                   >
                     {" "}
