@@ -74,7 +74,7 @@ export class Log extends Component {
                         float: "right",
                       }}
                     >
-                      Submission Time: {question.created_at}
+                      Score: {question.score}
                     </h6>
                   </div>
                 </div>
