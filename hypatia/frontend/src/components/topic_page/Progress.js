@@ -26,6 +26,10 @@ export class Progress extends Component {
     return Math.min(Math.max(min, value), max);
   };
 
+  totalScore = () => {
+
+  }
+
   // clickMe = () => {
   //   this.setState({ percentage: this.state.percentage + 25 });
   //   const requestOptions = {
@@ -45,12 +49,20 @@ export class Progress extends Component {
   // };
 
   render() {
-    const k = this.props.questions.length;
+    //const k = this.props.questions.length * (this.props.questions.score * 0.01);
+    // var rows = []
+    // for (var i=0; i < this.props.questions.length; i++){
+      
+    // }
+    var correct_questions = 0; //represent the correct number of questions (correctness depends on question's score)
+    this.props.questions.map((question) => (correct_questions += question.score * 0.01))
+    //const k = correct_questions * (sum * 0.01);
+
     return (
       <div style={{ marginBottom: 30, marginTop: 30 }}>
         <h2>Your Progress</h2>
         <ProgressBar
-          now={this.percentageLimits(0, k * 10, 100)}
+          now={this.percentageLimits(0, correct_questions * 10, 100)}
           style={{
             height: 25,
             borderRadius: 25,
