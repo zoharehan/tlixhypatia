@@ -67,6 +67,10 @@ We are dealing with the 4 topic belows for this applications:
 3. Multipliation
 4. Division
 
+### Score Standard ###
+- If the value of the question has a type of correct, then the score is 100
+- Otherwise, the score is 0 (whether it be math-error, parser-error, etc...)
+
 ### Admin Info ###
 
 username: admin
