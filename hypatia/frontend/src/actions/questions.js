@@ -9,7 +9,7 @@ import { GET_QUESTIONS } from "./types";
 
 var path = window.location.pathname.split('/')[2]
 
-console.log(path);
+//console.log(path);
 
 export const getQuestion = () => (dispatch) => {
   axios

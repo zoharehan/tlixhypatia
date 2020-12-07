@@ -2,9 +2,11 @@ import axios from 'axios';
 
 import { GET_NOTES, DELETE_NOTES, ADD_NOTES } from './types';
 
+var path = window.location.pathname.split('/')[2]
+
 // GET NOTES
 export const getNotes = () => dispatch => {
-    axios.get('/noteapi/notes/')
+    axios.get(`/noteapi/notes?topic_type=${path}`)
         .then(res => {
             dispatch({
                 type: GET_NOTES,
