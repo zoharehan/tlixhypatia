@@ -92,27 +92,42 @@ export class Practice extends Component {
                   <button
                     style={{
                       borderRadius: "5px",
+                      width: "200px",
+                      height: "30px",
+                      position: "default",
+                      top: "35px",
+                      right: "30px",
+                      marginBottom: "10px",
+                      marginTop: "10px",
+                    }}
+                    onClick={this.props.addQuestion.bind(
+                      this,
+                      {
+                        "question_prompt": suggestedpractice.question_suggested,
+                        "topic_type": suggestedpractice.topic_most_missed
+                      })}
+                    className="btn btn-success btn-sm"
+                  >
+                    {" "}
+                    Move to Questions Completed
+                  </button>
+                  <button
+                    style={{
+                      borderRadius: "5px",
                       width: "80px",
                       height: "30px",
                       position: "absolute",
                       top: "35px",
                       right: "30px",
                     }}
-                    // onClick={this.props.deleteSuggestedPractices.bind(
-                    //   this,
-                    //   suggestedpractice.id
-                    // )}
-                    OnClick={() => this.deleteClick(suggestedpractice)}
-                    // onClick={this.props.addQuestion.bind(
-                    //   this,
-                    //   {
-                    //     "question_prompt": suggestedpractice.question_suggested,
-                    //     "topic_type": suggestedpractice.topic_most_missed
-                    //   })}
-                    className="btn btn-success btn-sm"
+                    onClick={this.props.deleteSuggestedPractices.bind(
+                      this,
+                      suggestedpractice.id
+                    )}
+                    className="btn btn-danger btn-sm"
                   >
                     {" "}
-                    Completed
+                    Delete
                   </button>
                 </div>
               </div>
