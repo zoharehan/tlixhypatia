@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from studentsummary.models import Topic
 
-# Create your views here.
-
 
 def index(request):
     return render(request, 'topicsummary/index.html')
