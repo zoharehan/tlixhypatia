@@ -34,24 +34,13 @@ class Question(models.Model):
     The topic should already in the database. 
 
     """
-    # This tells Django what type of data each field holds
-    # similar to the _init_ but for database (check the tutorial to be sure)
-    # id: int
-    # question_prompt: str
-    # topic_type: str
-
-    # db give each Question object an id , so I will add a time field instead
 
     question_prompt = models.CharField(max_length=200)
     topic_type = models.CharField(max_length=200)
-    # topic_type = models.CharField(max_length = 200)
-    # time will be added automatically
     created_at = models.DateTimeField(auto_now_add=True)
     score = models.FloatField(default=0.0)
 
-    # maybe have the date as the question_id? or have a time submitted variable?
-
-    def __str__(self) -> str:  # doubles as the getter for question
+    def __str__(self) -> str:  
         """
         Return a string representation of this question including the
         text of the question. 
@@ -88,17 +77,8 @@ class Note(models.Model):
     - len(_notes) <= 250 (less than or equal to 250 characters)
     """
     _notes: str
-
-    # Replaces the init method
     _notes = models.CharField(max_length=250)
     topic_type = models.CharField(max_length=200, default="")
-
-    # def __init__(self, message) -> None:
-    #     """Initialize this note with <message>
-    #     Preconditions:
-    #         - len(message) <= 250
-    #     """
-    #     self._notes = message
 
     def get_notes(self) -> str:
         """Return the _notes attribute
@@ -120,32 +100,6 @@ class Note(models.Model):
         """
         if len(self._notes + message) <= 250:
             self._notes += message
-
-
-class Student(models.Model):
-    """
-    A student user
-    === Attributes ===
-    name: the name of this student
-    topics: this student's list of topics
-    questions: list of questions the student was assigned
-    score: the score on this students questions
-
-    === Representation Invariants ===
-    there cannot be a question in questions that has a topic_type \
-    not in student_topics
-    every key in questions_score must also be in student_topics
-    every key in topic_notes must also be in student_topics
-    """
-
-    name = models.CharField(max_length=100)
-    questions = []
-    topics = []
-    score = []
-
-    def get_topics(self):
-        return topics
-    # def add_topic
 
 
 class SuggestedPractice(models.Model):

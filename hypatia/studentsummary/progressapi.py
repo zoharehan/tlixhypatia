@@ -13,17 +13,4 @@ class ProgressTrackerViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = ProgressTrackerSerializer
 
-    def list(self, request):
-        # queryset = User.objects.all()
-        # serializer = UserSerializer(queryset, many=True)
-        print("responded")
-        if request.method == 'GET':
-            return HttpResponse("GET Request.")
-        elif request.method == 'POST':
-            print(request.body)
-            return HttpResponse("POST")
-
-        else: 
-            return HttpResponse("other requests")
-
-    # when you hit a URL.
+   

@@ -10,7 +10,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('questionapi/question', QuestionViewSet,
-                'question')  # (endpoint/question, viewset)
+                'question')  
 router.register('noteapi/notes', NoteViewSet, 'notes')
 router.register('topicapi/topic', TopicViewSet, 'topic')
 router.register('suggestedpracticeapi/suggestedpractice',
@@ -19,11 +19,3 @@ router.register('progressapi/progress', ProgressTrackerViewSet, 'progress')
 
 urlpatterns = router.urls
 
-
-# urlpatterns = [
-#     path('',views.index,name= "index"),
-
-#     path('<int:topic_id>/',views.detail,name = 'detail'),
-#     path('<int:topic_id>/results/',views.results,name = 'results'),
-#     path('<int:topic_id>/vote/',views.vote,name='vote'),
-# ]

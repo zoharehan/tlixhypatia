@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
 from .models import Question, Topic
-# Create your tests here.
 
 class TopicModelTests(TestCase):
     def test_get_topic_name(self):

@@ -1,5 +1,3 @@
-// evaluate function and send out states
-
 import { GET_QUESTIONS } from "../actions/types.js";
 
 const initalState = {

@@ -14,7 +14,6 @@ class SuggestedPracticeFilter(filters.FilterSet):
 class SuggestedPracticeViewSet(viewsets.ModelViewSet):
     # a query that grabs all the Questions
     queryset = SuggestedPractice.objects.all()
-    # will change later so a user can only access their own questions
     permission_classes = [
         permissions.AllowAny
     ]

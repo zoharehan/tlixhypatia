@@ -16,7 +16,6 @@ export class NoteForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    //console.log(this.state);
     const { _notes } = this.state;
     const note = { _notes };
     this.props.addNotes(note);

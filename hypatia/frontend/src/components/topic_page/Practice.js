@@ -1,6 +1,3 @@
-// this displays the log of all questions
-// to work with redux from this component
-
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -8,7 +5,6 @@ import {
   getSuggestedPractices,
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
-import suggestedpractices from "../../reducers/suggestedpractices";
 import Card from "react-bootstrap/Card";
 
 export class Practice extends Component {
