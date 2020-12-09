@@ -6,6 +6,7 @@ import {
   deleteSuggestedPractices,
 } from "../../actions/suggestedpractices";
 import Card from "react-bootstrap/Card";
+import { addQuestion } from "../../actions/questions";
 
 export class Practice extends Component {
   static PropTypes = {
@@ -66,17 +67,38 @@ export class Practice extends Component {
                       width: "80px",
                       height: "30px",
                       position: "absolute",
-                      top: "35px",
+                      top: "20px",
+                      right: "30px",
+                    }}
+                    onClick={this.props.addQuestion.bind(
+                      this,
+                      {
+                        "question_prompt": suggestedpractice.question_suggested,
+                        "topic_type": suggestedpractice.topic_most_missed
+                      }
+                    )}
+                    className="btn btn-success btn-sm"
+                  >
+                    {" "}
+                    Completed
+                  </button>
+                  <button
+                    style={{
+                      borderRadius: "5px",
+                      width: "80px",
+                      height: "30px",
+                      position: "absolute",
+                      top: "60px",
                       right: "30px",
                     }}
                     onClick={this.props.deleteSuggestedPractices.bind(
                       this,
                       suggestedpractice.id
                     )}
-                    className="btn btn-success btn-sm"
+                    className="btn btn-warning btn-sm"
                   >
                     {" "}
-                    Completed
+                    Delete
                   </button>
                 </div>
               </div>
@@ -94,4 +116,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   getSuggestedPractices,
   deleteSuggestedPractices,
+  addQuestion
 })(Practice);

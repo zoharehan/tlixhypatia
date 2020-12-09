@@ -5,6 +5,7 @@ import { addNotes } from "../../actions/notes";
 
 export class NoteForm extends Component {
   state = {
+    topic_type: "",
     _notes: "",
   };
 
@@ -16,13 +17,14 @@ export class NoteForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { _notes } = this.state;
-    const note = { _notes };
+    //console.log(this.state);
+    const { topic_type, _notes } = this.state;
+    const note = { topic_type, _notes };
     this.props.addNotes(note);
   };
 
   render() {
-    const { notes } = this.state;
+    const { topic_type, notes } = this.state;
     return (
       <div
         className="card card-body"
@@ -35,6 +37,16 @@ export class NoteForm extends Component {
       >
         <h2>Add a Note</h2>
         <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <h6>Insert the Topic</h6>
+              <input
+                className="form-control"
+                type="text"
+                name="topic_type"
+                onChange={this.onChange}
+                value={topic_type}
+              />
+          </div>
           <div className="form-group">
             <h6>Something for Future You!</h6>
             <input
