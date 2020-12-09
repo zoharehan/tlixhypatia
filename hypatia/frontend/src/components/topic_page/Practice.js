@@ -78,7 +78,8 @@ export class Practice extends Component {
                       this,
                       {
                         "question_prompt": suggestedpractice.question_suggested,
-                        "topic_type": suggestedpractice.topic_most_missed
+                        "topic_type": suggestedpractice.topic_most_missed,
+                        "score": 100
                       }
                     )}
                     className="btn btn-success btn-sm"
