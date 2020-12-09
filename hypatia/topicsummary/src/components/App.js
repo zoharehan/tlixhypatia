@@ -2,10 +2,9 @@ import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import Header from "./layout/Header";
-//change this!!!
 import Dashboard from "./topic_page/Dashboard";
 
-import { Provider } from "react-redux"; // connect redux to react through this provider
+import { Provider } from "react-redux"; 
 import store from "../store";
 
 class App extends Component {

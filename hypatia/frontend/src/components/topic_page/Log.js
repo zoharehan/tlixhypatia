@@ -1,6 +1,3 @@
-// this displays the log of all questions
-// to work with redux from this componet
-
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -18,10 +15,6 @@ export class Log extends Component {
 
 
   render() {
-    // var path = window.location.pathname.split('/')[2]
-    //
-    // console.log(path);
-
 
     return (
       <Fragment>

@@ -1,15 +1,7 @@
-// any action we want to fire off goes in here
-// this where make all of our HTTP requests
-
 import axios from "axios";
 import { GET_QUESTIONS, ADD_QUESTIONS } from "./types";
 
-//GET QUESTIONS
-// from question api created earlier
-
 var path = window.location.pathname.split('/')[2]
-
-//console.log(path);
 
 export const getQuestion = () => (dispatch) => {
   axios

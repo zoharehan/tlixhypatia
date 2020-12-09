@@ -64,33 +64,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getTopic })(Topic);
-// export default Topic;
-// { this.props.topics.map(topic => (
-//  <a key={topic.id} class="card-block" href="https://sophysun.me" >
-//  ))}
-
-// { this.props.topics.map(topic => (
-//
-// <h4 class="card-title"  style={{padding : '10px', color: 'black', '& h4:hover': {
-//   backgroundcolor: 'pink',},}}>{topic.name}</h4>
-//
-//
-// ))}
-
-// </a>
-// </div>
-//
-// </div>
-// </div>
-
-//       </Fragment>
-//     );
-//   }
-// }
-//
-// const mapStateToProps = (state) => ({
-//   topics: state.topics.topics,
-// });
-//
-// export default connect(mapStateToProps, { getTopic })(Topic);
-// // export default Topic;
