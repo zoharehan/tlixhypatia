@@ -61,7 +61,7 @@ We must receive questions from the hypatia application with document names that 
 - <topic_type>-<question_prompt>.etz
 
 ### Topic Standard ###
-We are dealing with the 4 topic belows for this applications:
+We used the 4 topic below for our demo and made this our standard for consistency:
 1. Addition
 2. Subtraction
 3. Multipliation
@@ -70,6 +70,7 @@ We are dealing with the 4 topic belows for this applications:
 ### Score Standard ###
 - If the value of the question has a type of correct, then the score is 100
 - Otherwise, the score is 0 (whether it be math-error, parser-error, etc...)
+- NO other score is accepted from 0 to 100 exclusive
 
 ### Admin Info ###
 
@@ -82,9 +83,9 @@ email: admin@example.com
 
 ### Main Pages ###
 
-1. main default page: http://127.0.0.1:8000/summary/
+1. local host page: http://127.0.0.1:8000/
 
-2. topic page: http://127.0.0.1:8000/summary/
+2. topic page (this is our main page): http://127.0.0.1:8000/summary/
 
 3. topic summary page: http://127.0.0.1:8000/summary/<topic_id> (Need to have topic id already in topicAPI)
 
@@ -97,5 +98,3 @@ email: admin@example.com
 3. topicapi: http://127.0.0.1:8000/topicapi/topic
 
 4. notesapi: http://127.0.0.1:8000/noteapi/notes
-
-
