@@ -6,6 +6,8 @@ Stack: Django, Django REST, React, Redux
 
 Used: bootswatch(customized bootstrap), bootstrap
 
+Here is a video of a presentation/demo of our project: https://youtu.be/BpQ55klMCz4
+
 # Pre-Run Installations:
 
 ### SocketIO ###
